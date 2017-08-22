@@ -44,7 +44,7 @@ public:
 	void GetWorldMatrix(XMMATRIX&);
 	void GetOrthoMatrix(XMMATRIX&);
 
-	void GetVideoCardInfo(char*, int&);
+	void GetVideoCardInfo1(char*, int&);
 
 private:
 	bool m_vsync_enabled;
