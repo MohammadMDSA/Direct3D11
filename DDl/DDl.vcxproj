@@ -19,16 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cameraclass.cpp" />
     <ClCompile Include="colorshaderclass.cpp" />
-    <ClCompile Include="D3dclass.cpp" />
+    <ClCompile Include="d3dclass.cpp" />
     <ClCompile Include="graphicsclass.cpp" />
     <ClCompile Include="inputclass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="modelclass.cpp" />
     <ClCompile Include="systemclass.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cameraclass.h" />
     <ClInclude Include="colorshaderclass.h" />
-    <ClInclude Include="D3dclass.h" />
+    <ClInclude Include="d3dclass.h" />
     <ClInclude Include="graphicsclass.h" />
     <ClInclude Include="inputclass.h" />
     <ClInclude Include="modelclass.h" />

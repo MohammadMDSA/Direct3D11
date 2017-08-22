@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #include "d3dclass.h"
 
+
 D3DClass::D3DClass()
 {
 	m_swapChain = 0;
@@ -24,6 +25,7 @@ D3DClass::D3DClass(const D3DClass& other)
 D3DClass::~D3DClass()
 {
 }
+
 
 bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hwnd, bool fullscreen,
 	float screenDepth, float screenNear)
@@ -95,25 +97,16 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 
 	// Now go through all the display modes and find the one that matches the screen width and height.
 	// When a match is found store the numerator and denominator of the refresh rate for that monitor.
-	bool flag = false;
-	for (i = 0; i < numModes; i++)
+	for (i = 0; i<numModes; i++)
 	{
 		if (displayModeList[i].Width == (unsigned int)screenWidth)
 		{
 			if (displayModeList[i].Height == (unsigned int)screenHeight)
 			{
-				flag = true;
 				numerator = displayModeList[i].RefreshRate.Numerator;
 				denominator = displayModeList[i].RefreshRate.Denominator;
 			}
 		}
-	}
-	// Assumes vsync is off if current display mode isn't listed
-	if (flag)
-	{
-		numerator = 0;
-		denominator = 1;
-		vsync = false;
 	}
 
 	// Get the adapter (video card) description.
@@ -208,7 +201,8 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 	featureLevel = D3D_FEATURE_LEVEL_11_0;
 
 	// Create the swap chain, Direct3D device, and Direct3D device context.
-	result = D3D11CreateDeviceAndSwapChain(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, &featureLevel, 1, D3D11_SDK_VERSION, &swapChainDesc, &m_swapChain, &m_device, NULL, &m_deviceContext);
+	result = D3D11CreateDeviceAndSwapChain(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, &featureLevel, 1,
+		D3D11_SDK_VERSION, &swapChainDesc, &m_swapChain, &m_device, NULL, &m_deviceContext);
 	if (FAILED(result))
 	{
 		return false;
@@ -356,6 +350,7 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 	return true;
 }
 
+
 void D3DClass::Shutdown()
 {
 	// Before shutting down set to windowed mode or when you release the swap chain it will throw an exception.
@@ -415,6 +410,7 @@ void D3DClass::Shutdown()
 	return;
 }
 
+
 void D3DClass::BeginScene(float red, float green, float blue, float alpha)
 {
 	float color[4];
@@ -453,15 +449,18 @@ void D3DClass::EndScene()
 	return;
 }
 
+
 ID3D11Device* D3DClass::GetDevice()
 {
 	return m_device;
 }
 
+
 ID3D11DeviceContext* D3DClass::GetDeviceContext()
 {
 	return m_deviceContext;
 }
+
 
 void D3DClass::GetProjectionMatrix(XMMATRIX& projectionMatrix)
 {
@@ -482,6 +481,7 @@ void D3DClass::GetOrthoMatrix(XMMATRIX& orthoMatrix)
 	orthoMatrix = m_orthoMatrix;
 	return;
 }
+
 
 void D3DClass::GetVideoCardInfo(char* cardName, int& memory)
 {

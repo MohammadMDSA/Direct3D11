@@ -18,7 +18,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="graphicsclass.cpp">
+    <ClCompile Include="colorshaderclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="inputclass.cpp">
@@ -27,33 +27,42 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="modelclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="systemclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D3dclass.cpp">
+    <ClCompile Include="cameraclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="colorshaderclass.cpp">
+    <ClCompile Include="d3dclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphicsclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="graphicsclass.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inputclass.h">
+    <ClInclude Include="colorshaderclass.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="systemclass.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="D3dclass.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="colorshaderclass.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="modelclass.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inputclass.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dclass.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cameraclass.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphicsclass.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
