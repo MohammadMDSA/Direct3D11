@@ -106,3 +106,49 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 			}
 		}
 	}
+
+	// Get the adapter (video card) description.
+	result = adapter->GetDesc(&adapterDesc);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+	// Store the dedicated video card memory in megabytes.
+	m_videoCardMemory = (int)(adapterDesc.DedicatedVideoMemory / 1024 / 1024);
+
+	// Convert the name of the video card to a character array and store it.
+	error = wcstombs_s(&stringLength, m_videoCardDescription, 128, adapterDesc.Description, 128);
+	if (error != 0)
+	{
+		return false;
+	}
+
+	// Release the display mode list.
+	delete[] displayModeList;
+	displayModeList = 0;
+
+	// Release the adapter output.
+	adapterOutput->Release();
+	adapterOutput = 0;
+
+	// Release the adapter.
+	adapter->Release();
+	adapter = 0;
+
+	// Release the factory.
+	factory->Release();
+	factory = 0;
+
+	// Initialize the swap chain description.
+	ZeroMemory(&swapChainDesc, sizeof(swapChainDesc));
+
+	// Set to a single back buffer.
+	swapChainDesc.BufferCount = 1;
+
+	// Set the width and height of the back buffer.
+	swapChainDesc.BufferDesc.Width = screenWidth;
+	swapChainDesc.BufferDesc.Height = screenHeight;
+
+	// Set regular 32-bit surface for the back buffer.
+	swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
