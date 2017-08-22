@@ -95,16 +95,25 @@ bool D3DClass::Initialize(int screenWidth, int screenHeight, bool vsync, HWND hw
 
 	// Now go through all the display modes and find the one that matches the screen width and height.
 	// When a match is found store the numerator and denominator of the refresh rate for that monitor.
+	bool flag = false;
 	for (i = 0; i < numModes; i++)
 	{
 		if (displayModeList[i].Width == (unsigned int)screenWidth)
 		{
 			if (displayModeList[i].Height == (unsigned int)screenHeight)
 			{
+				flag = true;
 				numerator = displayModeList[i].RefreshRate.Numerator;
 				denominator = displayModeList[i].RefreshRate.Denominator;
 			}
 		}
+	}
+	// Assumes vsync is off if current display mode isn't listed
+	if (flag)
+	{
+		numerator = 0;
+		denominator = 1;
+		vsync = false;
 	}
 
 	// Get the adapter (video card) description.
