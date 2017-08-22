@@ -9,6 +9,7 @@
 // INCLUDES //
 //////////////
 #include <windows.h>
+
 #include "d3dclass.h"
 
 
@@ -19,6 +20,7 @@ const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
 const float SCREEN_DEPTH = 1000.0f;
 const float SCREEN_NEAR = 0.1f;
+static unsigned int count = 0;
 
 
 ////////////////////////////////////////////////////////////////////////////////

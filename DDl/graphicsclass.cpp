@@ -2,6 +2,7 @@
 // Filename: graphicsclass.cpp
 ////////////////////////////////////////////////////////////////////////////////
 #include "graphicsclass.h"
+#include <math.h>
 
 
 GraphicsClass::GraphicsClass()
@@ -75,12 +76,11 @@ bool GraphicsClass::Frame()
 
 bool GraphicsClass::Render()
 {
+
 	// Clear the buffers to begin the scene.
 	m_Direct3D->BeginScene(0.5f, 0.5f, 0.5f, 1.0f);
 
-
 	// Present the rendered scene to the screen.
 	m_Direct3D->EndScene();
-
 	return true;
 }
