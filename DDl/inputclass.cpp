@@ -33,6 +33,11 @@ void InputClass::Initialize()
 	return;
 }
 
+MouseInput * InputClass::GetMouseInput() const
+{
+	return this->mouseInput;
+}
+
 
 void InputClass::KeyDown(unsigned int input)
 {
