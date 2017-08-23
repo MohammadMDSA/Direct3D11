@@ -37,6 +37,8 @@ public:
 	void Shutdown();
 	bool Frame();
 
+	CameraClass* GetCamera() const;
+
 private:
 	bool Render();
 

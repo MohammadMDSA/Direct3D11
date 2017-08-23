@@ -4,8 +4,6 @@
 #ifndef _INPUTCLASS_H_
 #define _INPUTCLASS_H_
 
-#include "MouseInput.h"
-
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -20,8 +18,6 @@ public:
 
 	void Initialize();
 
-	MouseInput* GetMouseInput() const;
-
 	void KeyDown(unsigned int);
 	void KeyUp(unsigned int);
 
@@ -29,7 +25,6 @@ public:
 
 private:
 	bool m_keys[256];
-	MouseInput* mouseInput;
 
 };
 

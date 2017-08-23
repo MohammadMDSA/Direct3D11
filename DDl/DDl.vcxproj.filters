@@ -42,11 +42,11 @@
     <ClCompile Include="graphicsclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MouseInput.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="inputclass.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="MouesDrag.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,11 +68,11 @@
     <ClInclude Include="systemclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MouseInput.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="inputclass.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="MouesDrag.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

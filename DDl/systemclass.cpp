@@ -2,6 +2,7 @@
 // Filename: systemclass.cpp
 ////////////////////////////////////////////////////////////////////////////////
 #include "systemclass.h"
+#include <iostream>
 
 
 SystemClass::SystemClass()
@@ -169,6 +170,14 @@ LRESULT CALLBACK SystemClass::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam
 			return 0;
 		}
 
+		// Store new mouse location
+		case WM_MOUSEMOVE:
+		{
+			int xPos = GET_X_LPARAM(lparam);
+			int yPos = GET_Y_LPARAM(lparam);
+		}
+
+
 		// Any other messages send to the default message handler as our application won't make use of them.
 		default:
 		{
@@ -300,7 +309,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 		// Check if the window is being closed.
 		case WM_CLOSE:
 		{
-			PostQuitMessage(0);		
+			PostQuitMessage(0);
 			return 0;
 		}
 
